@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Borda com LED real</title>
+    <style>
+        body {
+            background-color: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: sans-serif;
+        }
+
+        .menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .btn-jogos {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+            height: 100px;
+            background-color: transparent;
+            color: currentColor;
+            border-radius: 20px;
+            box-shadow: 0 2px 15px rgb(0 0 0 / 0.6);
+            overflow: hidden;
+        }
+
+        /* ANIMAÇÃO DO CONTORNO */
+        .btn-jogos::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            padding: 2px;
+            /* largura do "scanner" */
+            background: linear-gradient(0deg,
+                    transparent,
+                    white,
+                    transparent);
+            background-size: 400% 400%;
+            animation: borderScan 4s linear infinite;
+            -webkit-mask:
+                linear-gradient(#000 0 0) content-box,
+                linear-gradient(#000 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* A luz percorrendo a borda */
+        @keyframes borderScan {
+            0% {
+                background-position: 100% 100%;
+            }
+
+            100% {
+                background-position: 0% 0%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="btn-jogos">
+        <li>
+            <a href="../@Jogos/Jogo1.html" class="text-jogos">
+                Clássico
+            </a>
+        </li>
+        <li>
+            <a href="../@Jogos/Jogo2.html" class="text-jogos">
+                Adivinhação
+            </a>
+        </li>
+    </div>
+</body>
+
+</html>

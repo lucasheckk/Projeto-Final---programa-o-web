@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../@Pesquisa/StylePesquisa.css">
+    <link rel="stylesheet" href="../Header/StyleNavbar.css">
+    <link rel="stylesheet" href="../Theme/StyleTheme.css">
+    <title>Pesquisa</title>
+</head>
+
+<body class="dark">
+
+    <header>
+
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Rick_and_Morty.svg/1280px-Rick_and_Morty.svg.png"
+                alt="Logo Rick and Morty">
+        </div>
+
+        <div class="navbar">
+
+            <nav class="menu">
+                <ul>
+
+                    <li>
+                        <a href="../@Casa/Home.html" class="casa">
+                            <div class="icon-container">
+                                <svg width="32px" height="32px" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 10H7C9 10 10 9 10 7V5C10 3 9 2 7 2H5C3 2 2 3 2 5V7C2 9 3 10 5 10Z"
+                                        stroke="currentColor" stroke-width="1.3" stroke-miterlimit="10"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M17 10H19C21 10 22 9 22 7V5C22 3 21 2 19 2H17C15 2 14 3 14 5V7C14 9 15 10 17 10Z"
+                                        stroke="currentColor" stroke-width="1.3" stroke-miterlimit="10"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M17 22H19C21 22 22 21 22 19V17C22 15 21 14 19 14H17C15 14 14 15 14 17V19C14 21 15 22 17 22Z"
+                                        stroke="currentColor" stroke-width="1.3" stroke-miterlimit="10"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M5 22H7C9 22 10 21 10 19V17C10 15 9 14 7 14H5C3 14 2 15 2 17V19C2 21 3 22 5 22Z"
+                                        stroke="currentColor" stroke-width="1.3" stroke-miterlimit="10"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../@Pesquisa/Pesquisa.html" class="search">
+                            <div class="icon-container">
+                                <svg width="32px" height="32px" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M22 12C22 6.48 17.52 2 12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22"
+                                        stroke="currentColor" stroke-width="1.3" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M7.99998 3H8.99998C7.04998 8.84 7.04998 15.16 8.99998 21H7.99998"
+                                        stroke="currentColor" stroke-width="1.3" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M15 3C15.97 5.92 16.46 8.96 16.46 12" stroke="currentColor"
+                                        stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M3 16V15C5.92 15.97 8.96 16.46 12 16.46" stroke="currentColor"
+                                        stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M3 9.0001C8.84 7.0501 15.16 7.0501 21 9.0001" stroke="currentColor"
+                                        stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M18.2 21.4C19.9673 21.4 21.4 19.9673 21.4 18.2C21.4 16.4327 19.9673 15 18.2 15C16.4327 15 15 16.4327 15 18.2C15 19.9673 16.4327 21.4 18.2 21.4Z"
+                                        stroke="currentColor" stroke-width="1.3" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M22 22L21 21" stroke="currentColor" stroke-width="1.3"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../@Fav/MeusFavoritos.html" class="fav">
+                            <div class="icon-container">
+                                <svg width="32px" height="32px" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" data-icon="heart"
+                                    data-href="../@Fav/MeusFavoritos.html">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M5.62436 4.4241C3.96537 5.18243 2.75 6.98614 2.75 9.13701C2.75 11.3344 3.64922 13.0281 4.93829 14.4797C6.00072 15.676 7.28684 16.6675 8.54113 17.6345C8.83904 17.8642 9.13515 18.0925 9.42605 18.3218C9.95208 18.7365 10.4213 19.1004 10.8736 19.3647C11.3261 19.6292 11.6904 19.7499 12 19.7499C12.3096 19.7499 12.6739 19.6292 13.1264 19.3647C13.5787 19.1004 14.0479 18.7365 14.574 18.3218C14.8649 18.0925 15.161 17.8642 15.4589 17.6345C16.7132 16.6675 17.9993 15.676 19.0617 14.4797C20.3508 13.0281 21.25 11.3344 21.25 9.13701C21.25 6.98614 20.0346 5.18243 18.3756 4.4241C16.7639 3.68739 14.5983 3.88249 12.5404 6.02065C12.399 6.16754 12.2039 6.25054 12 6.25054C11.7961 6.25054 11.601 6.16754 11.4596 6.02065C9.40166 3.88249 7.23607 3.68739 5.62436 4.4241ZM12 4.45873C9.68795 2.39015 7.09896 2.10078 5.00076 3.05987C2.78471 4.07283 1.25 6.42494 1.25 9.13701C1.25 11.8025 2.3605 13.836 3.81672 15.4757C4.98287 16.7888 6.41022 17.8879 7.67083 18.8585C7.95659 19.0785 8.23378 19.292 8.49742 19.4998C9.00965 19.9036 9.55954 20.3342 10.1168 20.6598C10.6739 20.9853 11.3096 21.2499 12 21.2499C12.6904 21.2499 13.3261 20.9853 13.8832 20.6598C14.4405 20.3342 14.9903 19.9036 15.5026 19.4998C15.7662 19.292 16.0434 19.0785 16.3292 18.8585C17.5898 17.8879 19.0171 16.7888 20.1833 15.4757C21.6395 13.836 22.75 11.8025 22.75 9.13701C22.75 6.42494 21.2153 4.07283 18.9992 3.05987C16.901 2.10078 14.3121 2.39015 12 4.45873Z"
+                                        fill="currentColor" />
+                                </svg>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../@Jogos/Jogos.html" class="jogos">
+                            <div class="icon-container">
+                                <svg width="32px" height="32px" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.57002 12.46L6.52002 15.51" stroke="currentColor" stroke-width="1.5"
+                                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M6.55005 12.49L9.60005 15.54" stroke="currentColor" stroke-width="1.5"
+                                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M13.53 14H13.54" stroke="currentColor" stroke-width="2"
+                                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M17.47 14H17.48" stroke="currentColor" stroke-width="2"
+                                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M15.5 15.98V15.96" stroke="currentColor" stroke-width="2"
+                                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M15.5 12.04V12.02" stroke="currentColor" stroke-width="2"
+                                        stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M9 22H15C20 22 22 20 22 15V13C22 8 20 6 15 6H9C4 6 2 8 2 13V15C2 20 4 22 9 22Z"
+                                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M13.01 2L13 3.01C12.99 3.56 12.55 4 12 4H11.97C11.42 4 10.98 4.45 10.98 5C10.98 5.55 11.43 6 11.98 6H12.98"
+                                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../@Login/Login.html" class="login">
+                            <div class="icon-container">
+                                <svg width="32px" height="32px" viewBox="0 0 33 33" version="1.1" xml:space="preserve"
+                                    xmlns="http://www.w3.org/2000/svg" data-icon="login"
+                                    data-href="../@Login/Login.html">
+                                    <g>
+                                        <circle cx="16" cy="16" fill="none" r="15" stroke="currentColor"
+                                            stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.7" />
+                                        <path d="M26,27L26,27   c0-5.523-4.477-10-10-10h0c-5.523,0-10,4.477-10,10v0"
+                                            fill="none" stroke="currentColor" stroke-linejoin="round"
+                                            stroke-miterlimit="10" stroke-width="1.7" />
+                                        <circle cx="16" cy="11" fill="none" r="6" stroke="currentColor"
+                                            stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.7" />
+                                    </g>
+                                </svg>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+
+            <div class="toggle-switch" id="toggleSwitch">
+                <div class="indicator"></div>
+                <img src="../0 icones/Tema/moon.png" alt="Lua" class="moon">
+                <img src="../0 icones/Tema/sun.png" alt="Sol" class="sun">
+            </div>
+
+        </div>
+
+    </header>
+
+    <main>
+
+        <section>
+
+            <form class="result-text" action="" method="get">
+
+                <h2>Busca de personagem:</h2>
+
+                <div class="pesquisa">
+                    <label for="characterId">ID do personagem</label>
+                    <input type="number" name="characterId" id="characterId">
+                    <button id="btn-aleatorio">
+                        <svg width="32px" height="32px" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" data-icon="icon-pesquisa">
+                            <path
+                                d="M3.5 20.4999C4.33 21.3299 5.67 21.3299 6.5 20.4999L19.5 7.49994C20.33 6.66994 20.33 5.32994 19.5 4.49994C18.67 3.66994 17.33 3.66994 16.5 4.49994L3.5 17.4999C2.67 18.3299 2.67 19.6699 3.5 20.4999Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M18.01 8.98999L15.01 5.98999" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M8.5 2.44L10 2L9.56 3.5L10 5L8.5 4.56L7 5L7.44 3.5L7 2L8.5 2.44Z"
+                                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M4.5 8.44L6 8L5.56 9.5L6 11L4.5 10.56L3 11L3.44 9.5L3 8L4.5 8.44Z"
+                                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M19.5 13.44L21 13L20.56 14.5L21 16L19.5 15.56L18 16L18.44 14.5L18 13L19.5 13.44Z"
+                                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+
+                <h2>Informações:</h2>
+
+                <div class="filtro">
+                    <input type="checkbox" name="name" id="name">
+                    <label for="name">Nome</label>
+
+                    <input type="checkbox" name="status" id="status">
+                    <label for="status">Status</label>
+
+                    <input type="checkbox" name="species" id="species">
+                    <label for="species">Espécie</label>
+
+                    <input type="checkbox" name="gender" id="gender">
+                    <label for="gender">Gênero</label>
+
+                    <input type="checkbox" name="origin" id="origin">
+                    <label for="origin">Planeta de origem</label>
+                </div>
+
+                <br>
+
+                <div class="botoes">
+                    <button type="submit" id="btn-go" onclick="realizarBusca()">
+                        <svg width="40px" height="40px" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            data-icon="search-file">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M6.85929 1.25001C6.88904 1.25001 6.91919 1.25002 6.94976 1.25002L6.98675 1.25001C7.33818 1.24999 7.56433 1.24998 7.78542 1.27065C8.7367 1.35961 9.63905 1.73337 10.3746 2.34313C10.5456 2.48484 10.7055 2.64477 10.954 2.89329L11.5303 3.46969C12.3761 4.3154 12.7012 4.6311 13.0768 4.84005C13.2948 4.96134 13.526 5.05713 13.766 5.12552C14.1793 5.24333 14.6324 5.25002 15.8284 5.25002L16.253 5.25002C17.526 5.25 18.5521 5.24998 19.364 5.35206C20.2054 5.45784 20.9204 5.68358 21.5077 6.21185C21.6061 6.30032 21.6997 6.39393 21.7882 6.49231C22.3165 7.07965 22.5422 7.79459 22.648 8.63601C22.75 9.4479 22.75 10.4741 22.75 11.747V14.0564C22.75 15.8942 22.75 17.3498 22.5969 18.489C22.4393 19.6615 22.1071 20.6104 21.3588 21.3588C20.6104 22.1071 19.6615 22.4393 18.489 22.5969C17.3498 22.75 15.8942 22.75 14.0564 22.75H9.94361C8.10584 22.75 6.65021 22.75 5.51099 22.5969C4.33857 22.4393 3.38962 22.1071 2.64126 21.3588C1.80635 20.5239 1.48946 19.4393 1.35511 18.0734C1.31456 17.6612 1.61587 17.2942 2.02809 17.2536C2.44032 17.2131 2.80736 17.5144 2.84791 17.9266C2.96932 19.161 3.23047 19.8267 3.70192 20.2981C4.12513 20.7213 4.70478 20.975 5.71087 21.1103C6.73853 21.2484 8.0932 21.25 10 21.25H14C15.9068 21.25 17.2615 21.2484 18.2892 21.1103C19.2953 20.975 19.8749 20.7213 20.2981 20.2981C20.7213 19.8749 20.975 19.2953 21.1103 18.2892C21.2484 17.2615 21.25 15.9068 21.25 14V11.7979C21.25 10.4621 21.2486 9.5305 21.1597 8.82312C21.0731 8.13448 20.9141 7.76356 20.6729 7.49539C20.6198 7.43637 20.5637 7.3802 20.5046 7.32712C20.2365 7.08592 19.8656 6.92692 19.1769 6.84034C18.4695 6.75141 17.538 6.75002 16.2021 6.75002H15.8284C15.7912 6.75002 15.7545 6.75002 15.7182 6.75003C14.6702 6.75025 13.9944 6.75038 13.3548 6.56806C13.0041 6.46811 12.6661 6.32811 12.3475 6.15083C11.7663 5.82747 11.2885 5.34949 10.5476 4.60832C10.522 4.58264 10.496 4.55666 10.4697 4.53035L9.91943 3.98009C9.63616 3.69682 9.52778 3.58951 9.41731 3.49794C8.91403 3.08073 8.29664 2.825 7.64576 2.76413C7.50289 2.75077 7.35038 2.75002 6.94976 2.75002C6.03312 2.75002 5.67873 2.75329 5.39746 2.80636C4.08277 3.05441 3.05441 4.08277 2.80636 5.39746C2.75329 5.67873 2.75002 6.03312 2.75002 6.94976V12C2.75002 12.4142 2.41423 12.75 2.00002 12.75C1.5858 12.75 1.25002 12.4142 1.25002 12V6.94976C1.25002 6.91919 1.25001 6.88904 1.25001 6.85929C1.2499 6.06338 1.24982 5.55685 1.33237 5.11935C1.6949 3.19788 3.19788 1.6949 5.11935 1.33237C5.55685 1.24982 6.06338 1.2499 6.85929 1.25001ZM8.26846 11.5589C8.51209 11.2239 8.98116 11.1498 9.31614 11.3935L13.4411 14.3935C13.6352 14.5346 13.75 14.7601 13.75 15C13.75 15.24 13.6352 15.4654 13.4411 15.6066L9.31614 18.6066C8.98116 18.8502 8.51209 18.7761 8.26846 18.4411C8.02484 18.1062 8.0989 17.6371 8.43389 17.3935L10.6936 15.75H2.00002C1.5858 15.75 1.25002 15.4142 1.25002 15C1.25002 14.5858 1.5858 14.25 2.00002 14.25H10.6936L8.43389 12.6066C8.0989 12.3629 8.02484 11.8939 8.26846 11.5589Z"
+                                fill="currentColor" />
+                        </svg>
+                    </button>
+
+                    <button type="reset" id="btn-reset">
+                        <svg width="40px" height="40px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" data-icon="borracha">
+                            <path
+                                d="M8.086 2.207a2 2 0 0 1 2.828 0l3.879 3.879a2 2 0 0 1 0 2.828l-5.5 5.5A2 2 0 0 1 7.879 15H5.12a2 2 0 0 1-1.414-.586l-2.5-2.5a2 2 0 0 1 0-2.828l6.879-6.879zm2.121.707a1 1 0 0 0-1.414 0L4.16 7.547l5.293 5.293 4.633-4.633a1 1 0 0 0 0-1.414l-3.879-3.879zM8.746 13.547 3.453 8.254 1.914 9.793a1 1 0 0 0 0 1.414l2.5 2.5a1 1 0 0 0 .707.293H7.88a1 1 0 0 0 .707-.293l.16-.16z" />
+                        </svg>
+                    </button>
+
+                    <button type="button" id="btn-all">
+                        <svg width="40px" height="40px" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" data-icon="funil">
+                            <path
+                                d="M21.63 14.75C21.63 15.64 21.39 16.48 20.95 17.2C20.13 18.57 18.62 19.5 16.88 19.5C15.94 19.5 15.06 19.22 14.32 18.73C13.7 18.35 13.19 17.82 12.82 17.2C12.38 16.48 12.13 15.64 12.13 14.75C12.13 12.13 14.26 10 16.88 10C17.24 10 17.59 10.04 17.92 10.12C20.05 10.59 21.63 12.49 21.63 14.75Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M15.03 14.75L16.2 15.92L18.73 13.58" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M20.6901 4.01999V6.23999C20.6901 7.04999 20.1801 8.06001 19.6801 8.57001L17.92 10.12C17.59 10.04 17.2401 10 16.8801 10C14.2601 10 12.1301 12.13 12.1301 14.75C12.1301 15.64 12.3801 16.48 12.8201 17.2C13.1901 17.82 13.7001 18.35 14.3201 18.73V19.07C14.3201 19.68 13.92 20.49 13.41 20.79L12.0001 21.7C10.6901 22.51 8.87006 21.6 8.87006 19.98V14.63C8.87006 13.92 8.46006 13.01 8.06006 12.51L4.22003 8.47C3.72003 7.96 3.31006 7.05001 3.31006 6.45001V4.12C3.31006 2.91 4.22008 2 5.33008 2H18.67C19.78 2 20.6901 2.90999 20.6901 4.01999Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+
+            </form>
+
+            <div id="result-style" class="hidden">
+                <div id="fav">
+                    <img src="" alt="" id="img">
+                    <button class="favoritar">
+                        <svg width="100px" height="100px" viewBox="-0.5 0 25 25" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" data-icon="favoritos">
+                            <path
+                                d="M15.6001 3.91998C14.268 3.92397 12.9849 4.42297 12 5.32001C11.2277 4.61746 10.2676 4.15485 9.23679 3.98858C8.20602 3.82231 7.1491 3.95955 6.19498 4.3836C5.24087 4.80765 4.43081 5.50018 3.8635 6.37671C3.29619 7.25324 2.99614 8.27591 3.00004 9.32C3.00004 15.77 12 20.14 12 20.14C12 20.14 21 15.77 21 9.32C21 7.88784 20.4311 6.51434 19.4184 5.50165C18.4057 4.48895 17.0322 3.91998 15.6001 3.91998Z"
+                                stroke="black" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+                <div id="content"></div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="../Scripts/Theme.js"></script>
+    <script src="../Scripts/Api.js"></script>
+    <script src="../Scripts/Favoritar.js"></script>
+
+</body>
+
+</html>

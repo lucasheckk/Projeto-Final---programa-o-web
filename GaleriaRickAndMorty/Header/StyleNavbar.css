@@ -1,0 +1,94 @@
+/* Keyframe para animação da Navbar */
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.09);
+    opacity: 0.85;
+  }
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  z-index: 1000;
+  background-color: rgb(50, 50, 50);
+  transition: 0.5s ease;
+}
+
+body.light header {
+  background-color: rgb(208, 208, 208);
+  transition: 0.5s ease;
+}
+
+.logo img {
+  position: absolute;
+  width: 12%;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  height: auto;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  z-index: 2;
+  transition: color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.icon-container {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  transition: 0.4s ease;
+}
+
+.icon-container:hover {
+  animation: pulse 1.8s ease-in-out infinite;
+  transition: 0.4s ease;
+}
+
+.menu {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+body.light .menu ul li a {
+  color: black;
+  transition: 0.5s ease;
+}
+
+.menu ul li a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  transition: 0.5s ease;
+}

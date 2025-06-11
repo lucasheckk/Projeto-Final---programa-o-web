@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    margin-top: 95px;
+    box-sizing: border-box;
+    flex: 1;
+}
+
+body.dark {
+    background-image: url('../0 icones/img/klipartz.com.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #2c2c2c;
+}
+
+body.light {
+    background-image: url('../0 icones/img/rick-and-morty-31043.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgb(226, 226, 226);
+}
+
