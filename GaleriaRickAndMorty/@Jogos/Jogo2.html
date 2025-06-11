@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Rick and Morty - Adivinhe o Personagem</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+            background: #fafafa;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        .suggestions {
+            border: 1px solid #ccc;
+            max-height: 150px;
+            overflow-y: auto;
+            margin-bottom: 15px;
+        }
+
+        .suggestion {
+            padding: 8px;
+            cursor: pointer;
+            background: white;
+        }
+
+        .suggestion:hover,
+        .suggestion.active {
+            background: #f0f0f0;
+        }
+
+        #attempts {
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 10px;
+        }
+
+        #attempts {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .attempt {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            background-color: #f9f9f9;
+            overflow-x: auto;
+            min-height: 110px;
+        }
+
+        .attempt img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+
+        .info {
+            display: flex;
+            gap: 10px;
+            flex-wrap: nowrap;
+            /* Para manter todos os quadrados em linha */
+            justify-content: flex-start;
+        }
+
+        .result-box {
+            min-width: 90px;
+            height: 90px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            border-radius: 6px;
+            flex-shrink: 0;
+            padding: 5px;
+            box-sizing: border-box;
+            font-size: 12px;
+            word-break: break-word;
+            line-height: 1.2;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .yellow {
+            background-color: goldenrod;
+        }
+
+        #winner-card {
+            margin-top: 20px;
+            border: 2px solid green;
+            padding: 10px;
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+            background: #e7ffe7;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        #winner-card img {
+            width: 150px;
+            border-radius: 10px;
+        }
+
+        #restart-button {
+            display: none;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        #restart-button:hover {
+            background: #0052a3;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🧠 Adivinhe o Personagem - Rick and Morty</h1>
+    <input type="text" id="character-input" placeholder="Digite o nome do personagem..." autocomplete="off" />
+    <div class="suggestions" id="suggestions"></div>
+    <div id="attempts"></div>
+    <div id="winner-card"></div>
+    <button id="restart-button">🔁 Jogar Novamente</button>
+
+    <script>
+        let allCharacters = [];
+        let mysteryCharacter = null;
+        let activeIndex = -1;
+
+        async function fetchAllCharacters() {
+            let characters = [];
+            for (let i = 1; i <= 42; i++) {
+                const res = await fetch(`https://rickandmortyapi.com/api/character/?page=${i}`);
+                const data = await res.json();
+                characters = characters.concat(data.results);
+            }
+            return characters;
+        }
+
+        async function startGame() {
+            allCharacters = await fetchAllCharacters();
+            mysteryCharacter = allCharacters[Math.floor(Math.random() * allCharacters.length)];
+            document.getElementById("attempts").innerHTML = "";
+            document.getElementById("winner-card").style.display = "none";
+            document.getElementById("restart-button").style.display = "none";
+            console.log("Personagem misterioso:", mysteryCharacter.name);
+        }
+
+        startGame();
+
+        const input = document.getElementById("character-input");
+        const suggestionsDiv = document.getElementById("suggestions");
+        const attemptsDiv = document.getElementById("attempts");
+        const winnerCard = document.getElementById("winner-card");
+        const restartButton = document.getElementById("restart-button");
+
+        input.addEventListener("input", () => {
+            updateSuggestions(input.value.toLowerCase());
+        });
+
+        input.addEventListener("keydown", (e) => {
+            const items = suggestionsDiv.querySelectorAll(".suggestion");
+            if (e.key === "ArrowDown") {
+                activeIndex = (activeIndex + 1) % items.length;
+                updateActive(items);
+            } else if (e.key === "ArrowUp") {
+                activeIndex = (activeIndex - 1 + items.length) % items.length;
+                updateActive(items);
+            } else if (e.key === "Enter") {
+                if (items[activeIndex]) {
+                    items[activeIndex].click();
+                }
+            }
+        });
+
+        function updateActive(items) {
+            items.forEach(i => i.classList.remove("active"));
+            if (items[activeIndex]) {
+                items[activeIndex].classList.add("active");
+                items[activeIndex].scrollIntoView({ block: "nearest" });
+            }
+        }
+
+        function updateSuggestions(query) {
+            activeIndex = -1;
+            suggestionsDiv.innerHTML = "";
+            if (!query) return;
+            const matches = allCharacters.filter(c => c.name.toLowerCase().startsWith(query)).slice(0, 10);
+            matches.forEach(character => {
+                const div = document.createElement("div");
+                div.className = "suggestion";
+                div.textContent = character.name;
+                div.addEventListener("click", () => {
+                    input.value = "";
+                    suggestionsDiv.innerHTML = "";
+                    makeGuess(character);
+                });
+                suggestionsDiv.appendChild(div);
+            });
+        }
+
+        function makeGuess(guess) {
+            const attempt = document.createElement("div");
+            attempt.className = "attempt";
+
+            const img = document.createElement("img");
+            img.src = guess.image;
+            img.alt = guess.name;
+            img.addEventListener("click", () => {
+                alert(`Esse personagem é: ${guess.name}`);
+            });
+
+            attempt.appendChild(img);
+
+            const infoContainer = document.createElement("div");
+            infoContainer.className = "info";
+
+            const props = ["status", "species", "gender", "origin"];
+            let allMatch = true;
+
+            props.forEach(prop => {
+                const val = prop === "origin" ? guess.origin.name : guess[prop];
+                const mysteryVal = prop === "origin" ? mysteryCharacter.origin.name : mysteryCharacter[prop];
+                const box = document.createElement("div");
+                box.className = "result-box";
+
+                if (val === mysteryVal) {
+                    box.classList.add("green");
+                } else {
+                    allMatch = false;
+                    box.classList.add("red");
+                }
+
+                box.textContent = `${prop.toUpperCase()}: ${val}`;
+                infoContainer.appendChild(box);
+            });
+
+            if (!allMatch && isIdentical(guess, mysteryCharacter)) {
+                const boxes = infoContainer.querySelectorAll(".result-box");
+                boxes.forEach(box => {
+                    box.classList.remove("green", "red");
+                    box.classList.add("yellow");
+                });
+            }
+
+            attempt.appendChild(infoContainer);
+            attemptsDiv.prepend(attempt);
+
+            if (guess.id === mysteryCharacter.id) {
+                showWinner(guess);
+            }
+        }
+
+        function isIdentical(a, b) {
+            return (
+                a.status === b.status &&
+                a.species === b.species &&
+                a.gender === b.gender &&
+                a.origin.name === b.origin.name
+            );
+        }
+
+        function showWinner(character) {
+            winnerCard.style.display = "block";
+            winnerCard.innerHTML = `
+        <h2>🎉 Você acertou!</h2>
+        <img src="${character.image}" alt="${character.name}" />
+        <p><strong>Nome:</strong> ${character.name}</p>
+        <p><strong>Status:</strong> ${character.status}</p>
+        <p><strong>Espécie:</strong> ${character.species}</p>
+        <p><strong>Gênero:</strong> ${character.gender}</p>
+        <p><strong>Planeta:</strong> ${character.origin.name}</p>
+      `;
+            restartButton.style.display = "inline-block";
+        }
+
+        restartButton.addEventListener("click", () => {
+            startGame();
+        });
+    </script>
+</body>
+
+</html>

@@ -329,14 +329,6 @@ body.light svg[data-icon="search-file"]:hover {
   stroke: red;
 }
 
-.favoritar:hover:not(.salvo) svg path {
-  stroke: gray;
-}
-
-.favoritar.salvo:hover svg path {
-  fill: transparent;
-  stroke: gray;
-}
 
 @keyframes animSalvar {
   0% { transform: scale(1); }

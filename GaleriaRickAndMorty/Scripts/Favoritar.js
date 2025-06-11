@@ -4,7 +4,7 @@ document.querySelectorAll('.favoritar').forEach(button => {
   });
 });
 
-const container = document.getElementById('content'); // Atualizado para o ID correto
+const container = document.getElementById('content'); 
 
 async function fetchCharacters() {
   const res = await fetch('https://rickandmortyapi.com/api/character');
