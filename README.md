@@ -3,17 +3,6 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Galeria Rick and Morty - README</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f9f9f9; color: #333; line-height: 1.6; }
-        h1, h2, h3 { color: #2c3e50; }
-        code { background: #eee; padding: 2px 4px; border-radius: 4px; }
-        pre { background: #eee; padding: 10px; border-radius: 4px; overflow-x: auto; }
-        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
-        table, th, td { border: 1px solid #ccc; }
-        th, td { padding: 10px; text-align: left; }
-        a { color: #3498db; text-decoration: none; }
-    </style>
 </head>
 <body>
 
