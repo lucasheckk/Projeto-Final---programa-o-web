@@ -21,18 +21,6 @@
 <li>💡 Tema escuro customizado</li>
 </ul>
 
-<h2>📷 Imagens</h2>
-<table>
-<tr>
-<th>Pesquisa</th>
-<th>Favoritos</th>
-</tr>
-<tr>
-<td><img src="caminho/para/pesquisa.png" alt="Pesquisa" width="300"></td>
-<td><img src="caminho/para/favoritos.png" alt="Favoritos" width="300"></td>
-</tr>
-</table>
-
 <h2>🧪 Tecnologias usadas</h2>
 <ul>
 <li>HTML5</li>
