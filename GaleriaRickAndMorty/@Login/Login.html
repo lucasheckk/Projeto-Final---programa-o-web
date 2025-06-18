@@ -12,6 +12,7 @@
 
 <body class="dark">
 
+    <div class="background-image"></div>
     <header>
 
         <div class="logo">
@@ -155,11 +156,23 @@
     </header>
 
     <main>
-        <p>Conteudo...</p>
-    </main>
 
-    <script src="../Scripts/Theme.js"></script>
+  <section class="login-box">
+    <form id="formLogin">
+     <h2>Login</h2>
+    <label for="usuario">Usuário</label>
+    <input type="text" id="usuario" name="usuario" placeholder="Digite seu usuário" required>
 
+    <label for="senha">Senha</label>
+    <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+
+    <button type="submit">Entrar</button>
+     </form>
+
+  </section>
+</main>
+<script src="../Scripts/Login.js"></script>
+<script src="../Scripts/Theme.js"></script>
 </body>
 
 </html>

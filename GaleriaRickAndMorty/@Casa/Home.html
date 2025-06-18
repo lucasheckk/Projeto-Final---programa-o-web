@@ -155,12 +155,19 @@
     </header>
 
     <main>
-
-
+    <section style="padding: 20px;">
+        <h1 id="boasVindas" style="color: rgb(191, 222, 66); font-size: 1.5rem;"></h1>
+    </section>
 
     </main>
 
     <script src="../Scripts/Theme.js"></script>
+    <script>
+    const usuario = localStorage.getItem('usuario');
+    if (usuario) {
+        document.getElementById('boasVindas').textContent = `Bem-vindo, ${usuario}!`;
+    }
+</script>
 
 </body>
 
