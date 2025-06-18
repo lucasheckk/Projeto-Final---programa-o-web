@@ -119,6 +119,8 @@ btnGo.addEventListener('click', async (event) => {
     image.src = `${result.image}`;
 
     await buildResult(result);
+    const btnFavoritar = document.querySelector('#fav .favoritar');
+    configurarBotaoFavoritar(btnFavoritar, result);
 });
 
 btnReset.addEventListener('click', () => location.reload());
