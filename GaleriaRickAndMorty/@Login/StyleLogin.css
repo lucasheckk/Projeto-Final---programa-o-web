@@ -13,20 +13,126 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 main {
-    margin-top: 95px;
-    box-sizing: border-box;
     flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 body.dark {
-    background-color: #2c2c2c;
-    color: rgb(226, 226, 226);
+    background-color: #222;
+    color: #fff;
 }
 
 body.light {
-    background-color: rgb(226, 226, 226);
+    background-color: #fff;
     color: #222;
+}
+
+.login-box {
+    background: linear-gradient(135deg, rgb(191, 222, 66), rgb(65, 180, 201));
+    border: 2px solid rgb(191, 222, 66);
+    padding: 30px 40px;
+    border-radius: 15px;
+    width: 340px;
+    box-shadow: 0 0 25px rgba(65, 180, 201, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.login-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: portalEffect 6s linear infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+
+@keyframes portalEffect {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.login-box h2 {
+    margin: 0 0 20px 0;
+    text-align: center;
+    color: #fff;
+    z-index: 1;
+}
+
+.login-box label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #fff;
+    z-index: 1;
+}
+
+.login-box input {
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #222;
+    z-index: 1;
+    transition: border-color 0.3s ease;
+}
+
+.login-box input:focus {
+    border-color: rgb(65, 180, 201);
+}
+
+.login-box button {
+    margin-top: 15px;
+    padding: 12px 30px;
+    background-color: white;
+    color: rgb(65, 180, 201);
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    align-self: center;
+    z-index: 1;
+}
+
+.login-box button:hover {
+    background-color: rgb(191, 222, 66);
+    color: #222;
+    box-shadow: 0 0 10px rgba(191, 222, 66, 0.6);
+}
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../0 icones/img/rick-and-morty-31043.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 700px;
+    opacity: 0.05;
+    z-index: -1;
+    pointer-events: none;
 }
